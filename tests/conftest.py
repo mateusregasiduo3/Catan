@@ -1,5 +1,10 @@
 import sys
 import types
+from pathlib import Path
+
+# Add project root to Python path so tests can import components, models, etc.
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 # Minimal fake pygame module for test environment (avoid requiring pygame install)
 pygame = types.ModuleType('pygame')
